@@ -8,6 +8,9 @@
   <h1>{_subscriptions.frontend.my.history}</h1>
 </div>
 
+{control simpleWidget 'frontend.user.subscriptions.table.before', ['user_id' => $userId, 'subscriptions' => $subscriptions]}
+
+
 <div class="row">
   <div class="col-md-12">
 
@@ -17,6 +20,7 @@
           <th>{_subscriptions.menu.subscriptions}</th>
           <th>{_system.from}</th>
           <th>{_system.to}</th>
+          {control simpleWidget 'frontend.user.subscriptions.table.col.head'}
         </tr>
       </thead>
       <tbody>
@@ -30,6 +34,7 @@
             <span n:if="$subscription->start_time < new \DateTime() && $subscription->end_time > new \DateTime()" class="label label-success">{_system.actual}</span>
           </td>
           <td>{$subscription->end_time|localizedDate:true}</td>
+          {control simpleWidget 'frontend.user.subscriptions.table.col.row', $subscription}
         </tr>
       </tbody>
     </table>
@@ -43,3 +48,5 @@
 
   </div>
 </div>
+
+{control simpleWidget 'frontend.user.subscriptions.table.after', ['user_id' => $userId, 'subscriptions' => $subscriptions]}
