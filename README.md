@@ -49,6 +49,10 @@ subscribersWithMissingAddressWidget:
 These are widget placeholders provided by Payments Module. You can register your own widgets to be displayed at following places:
 
 * `admin.payments.top`
+* `frontend.user.subscriptions.table.before`
+* `frontend.user.subscriptions.table.col.head`
+* `frontend.user.subscriptions.table.col.row`
+* `frontend.user.subscriptions.table.after`
 * `payments.banktransfer.right`
 * `payments.admin.payment_source_listing`
 * `payments.admin.payment_item_listing`
