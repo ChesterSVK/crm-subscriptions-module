@@ -246,9 +246,10 @@ class SubscriptionsRepository extends Repository
             }
 
             if ($fireUpdateEvent) {
-                $this->emitter->emit(new SubscriptionUpdatedEvent($row));
+                $this->emitter->emit(new SubscriptionUpdatedEvent($row, $data));
                 $this->hermesEmitter->emit(new HermesMessage('update-subscription', [
                     'subscription_id' => $row->id,
+                    'update_data' => $data
                 ]));
             }
         }
